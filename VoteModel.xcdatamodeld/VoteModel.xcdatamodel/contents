@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Friends" representedClassName="Friends" syncable="YES">
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediumHeadImage" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="mediumHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalHeadImage" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="originalHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screennamePinyin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="signature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailHeadImage" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="thumbnailHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="whoseFriends" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="friends" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediumHeadImage" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="mediumHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalHeadImage" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="originalHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screennamePinyin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="signature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailHeadImage" optional="YES" attributeType="Transformable" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="thumbnailHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friends" inverseName="whoseFriends" inverseEntity="Friends" syncable="YES"/>
+    </entity>
+    <entity name="VotesInfo" representedClassName="History" syncable="YES">
+        <attribute name="begin_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="end_time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="participants" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="participants_num" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="private_vote" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vote_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Friends" positionX="-146" positionY="-160" width="128" height="253"/>
+        <element name="Users" positionX="-360" positionY="-133" width="153" height="268"/>
+        <element name="VotesInfo" positionX="-146" positionY="143" width="128" height="163"/>
+    </elements>
+</model>
