@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="FailedDeletedFriends" representedClassName="FailedDeletedFriends" syncable="YES">
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="whoseDeletedFriends" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="deletedFriends" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="FailedDeletedVotes" representedClassName="FailedDeletedVotes" syncable="YES">
+        <attribute name="deleteForever" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="voteID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="whoseDeletedVotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="deletedVotes" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="FailedMsg" representedClassName="FailedMsg" syncable="YES">
+        <attribute name="format" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="method" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parameters" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="whoseFailedMsg" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="failedMsg" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Friends" representedClassName="Friends" syncable="YES">
+        <attribute name="basicInfoLastUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headImageLastUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediumHeadImagePath" optional="YES" attributeType="String" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="mediumHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalHeadImagePath" optional="YES" attributeType="String" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="originalHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screennamePinyin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="signature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailsHeadImagePath" optional="YES" attributeType="String" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="thumbnailsHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="whoseFriends" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="friends" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Options" representedClassName="Options" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="businessID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="categories" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="voters" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="whichVote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VotesInfo" inverseName="options" inverseEntity="VotesInfo" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="basicInfoLastUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headImageLastUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediumHeadImagePath" optional="YES" attributeType="String" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="mediumHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalHeadImagePath" optional="YES" attributeType="String" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="originalHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screennamePinyin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="signature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailsHeadImagePath" optional="YES" attributeType="String" valueTransformerName="UIImageToDataTransformer" syncable="YES"/>
+        <attribute name="thumbnailsHeadImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="deletedFriends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FailedDeletedFriends" inverseName="whoseDeletedFriends" inverseEntity="FailedDeletedFriends" syncable="YES"/>
+        <relationship name="deletedVotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FailedDeletedVotes" inverseName="whoseDeletedVotes" inverseEntity="FailedDeletedVotes" syncable="YES"/>
+        <relationship name="failedMsg" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FailedMsg" inverseName="whoseFailedMsg" inverseEntity="FailedMsg" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friends" inverseName="whoseFriends" inverseEntity="Friends" syncable="YES"/>
+        <relationship name="votesInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VotesInfo" inverseName="whoseVote" inverseEntity="VotesInfo" syncable="YES"/>
+    </entity>
+    <entity name="VotesInfo" representedClassName="VotesInfo" syncable="YES">
+        <attribute name="anonymous" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="basicUpdateFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="basicUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deleteForever" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="draft" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isEnd" optional="YES" attributeType="Boolean" defaultValueString="0" syncable="YES"/>
+        <attribute name="maxChoice" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="notification" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="organizer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="participants" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="preChoose" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="thePublic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="voteDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="voteID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="voteUpdateFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="voteUpdateTag" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="options" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Options" inverseName="whichVote" inverseEntity="Options" syncable="YES"/>
+        <relationship name="whoseVote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="votesInfo" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FailedDeletedFriends" positionX="-243" positionY="0" width="128" height="73"/>
+        <element name="FailedDeletedVotes" positionX="-252" positionY="-9" width="128" height="88"/>
+        <element name="Friends" positionX="-146" positionY="-160" width="128" height="270"/>
+        <element name="Options" positionX="-252" positionY="-9" width="128" height="148"/>
+        <element name="Users" positionX="-360" positionY="-133" width="153" height="345"/>
+        <element name="VotesInfo" positionX="-146" positionY="143" width="128" height="388"/>
+        <element name="FailedMsg" positionX="-252" positionY="-9" width="128" height="118"/>
+    </elements>
+</model>

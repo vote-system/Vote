@@ -1,0 +1,184 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define PrintRect(rect)          NSLog(@"Rect = %f, %f, %f, %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)
+
+#define FRAME_X(view)              view.frame.origin.x
+#define FRAME_Y(view)              view.frame.origin.y
+#define FRAME_WIDTH(view)          view.frame.size.width
+#define FRAME_HEIGHT(view)         view.frame.size.height
+
+#define BOUNDS_X(view)             view.bounds.origin.x
+#define BOUNDS_Y(view)             view.bounds.origin.y
+#define BOUNDS_WIDTH(view)         view.bounds.size.width
+#define BOUNDS_HEIGHT(view)        view.bounds.size.height
+
+#define ORIGINAL_HEAD_IMAGE_SIZE             100.0
+#define LARGE_HEAD_IMAGE_SIZE                100.0
+#define MEDIUM_HEAD_IMAGE_SIZE               50.0
+#define THUMBNAILS_HEAD_IMAGE_SIZE           20.0
+#define NAVIGATION_BAR_HEIGHT                64.0
+#define SIGN_IN_FLAG                         @"sign_in_flag"
+
+//network register and login parameters
+#define DEVICE_TOKEN                         @"device_token"
+#define SERVER_USERNAME                      @"usrname"
+#define SERVER_NAME_USED                     @"name_used"
+#define SERVER_PASSWORD                      @"passwd"
+#define SERVER_USER_UNIQUE                   @"usr_unique"
+#define SERVER_EMAIL                         @"email"
+#define SERVER_REGISTER_RESPONSE             @"reg_code"
+#define SERVER_LOGIN_RESPONSE                @"login_code"
+#define SERVER_AUTHENTICATED                 @"authenticated"
+//push notification message
+//#define SERVER_BADGE_NUMBER                  @"badge_number"
+#define SERVER_ADD_FRIEND_REQ                @"ADD_FRIEND_REQUEST"
+#define SERVER_AGREE_FRIEND_RESP             @"AGREE_ADD_FRIEND"
+#define SERVER_REFUSE_FRIEND_RESP            @"REFUSE_ADD_FRIEND"
+#define SERVER_FRIEND_BADGE_NUM              @"friend_badge"
+#define SERVER_USR_VOTE_BADGE_NUM            @"usr_vote_badge"
+//server database
+#define SERVER_GENDER                        @"gender"
+#define SERVER_MEDIUM_HEAD_IMAGE             @"medium_head_image"
+#define SERVER_MEDIUM_HEAD_IMAGE_URL         @"medium_head_imag_url"
+#define SERVER_ORGINAL_HEAD_IMAGE            @"original_head_image"
+#define SERVER_ORGINAL_HEAD_IMAGE_URL        @"original_head_imag_url"
+#define SERVER_THUMBNAILS_HEAD_IMAGE         @"thumbnails_head_image"
+#define SERVER_THUMBNAILS_HEAD_IMAGE_URL     @"thumbnails_head_imag_url"
+#define SERVER_SCREENNAME                    @"screen_name"
+#define SERVER_SCREENNAME_PINYIN             @"screen_name_pinyin"
+#define SERVER_STRANGER_MSG                  @"stranger_msg"
+#define SERVER_USER_SIGNATURE                @"signature"
+#define SERVER_BASIC_INFO_LAST_UPDATE_TAG    @"usr_info_timestamp"
+#define SERVER_HEAD_IMAGE_LAST_UPDATE_TAG    @"head_imag_timestamp"
+#define INITIAL_STATE                        -1 //user firstly get the info from server, not need update data
+//Server Votes Info
+#define SERVER_VOTE_INFO                     @"vote_info"
+#define SERVER_VOTE_ID                       @"vote_id"
+#define SERVER_VOTE_TITLE                    @"title"
+#define SERVER_VOTE_START_TIME               @"start_time"
+#define SERVER_VOTE_END_TIME                 @"end_time"
+#define SERVER_VOTE_ORGANIZER                @"organizer"
+#define SERVER_VOTE_DESCRIPTION              @"description"
+#define SERVER_VOTE_IMAGE_URL                @"image_url"
+#define SERVER_VOTE_PARTICIPANTS             @"participants"
+#define SERVER_VOTE_OPTIONS                  @"options"
+#define SERVER_VOTE_BASIC_TIMESTAMP          @"basic_timestamp"
+#define SERVER_VOTE_VOTE_TIMESTAMP           @"vote_timestamp"
+#define SERVER_VOTE_CATEGORY                 @"category"
+#define SERVER_VOTE_ANONYMOUS_FLAG           @"anonymous"
+#define SERVER_VOTE_VOTERS                   @"voters"
+#define SERVER_VOTE_DETAIL                   @"vote_detail"
+#define SERVER_VOTES                         @"votes"
+#define SERVER_VOTE_MAX_CHOICE               @"max_choice"
+#define SERVER_VOTE_PRE_CHOOSE               @"old_selections"
+#define SERVER_VOTE_CUR_CHOOSE               @"new_selections"
+#define SERVER_VOTE_THE_PUBLIC_FLAG          @"the_public"
+#define SERVER_VOTE_NOTIFICATION             @"notification"
+#define SERVER_VOTE_DELETE_FOREVER           @"delete_forever"
+//Server Options
+#define SERVER_OPTIONS_NAME                  @"option_name"
+#define SERVER_OPTIONS_AVG_PRICE             @"avg_price"
+#define SERVER_OPTIONS_BUSINESS_ID           @"business_id"
+#define SERVER_OPTIONS_ADDRESS               @"option_address"
+#define SERVER_OPTIONS_CATEGORY              @"categories"
+#define SERVER_OPTIONS_ORDER                 @"order"
+#define SERVER_OPTIONS_PHOTO_URL             @"s_photo_url"
+#define SERVER_OPTIONS_RATING_IMG_URL        @"rating_s_img_url"
+#define SERVER_OPTIONS_REGIONS               @"regions"
+//friend & stranger list
+#define SERVER_FRIENDS_ARRAY                 @"friends_array"
+#define SERVER_STRANGERS_ARRAY               @"strangers_array"
+#define SERVER_FRIEND_NAME                   @"friend_name"
+#define SERVER_FETCH_NAME                    @"fetch_name"
+#define SERVER_FRIEND_ACTION                 @"friend_action"
+#define SERVER_ADD_FRIEND_MSG                @"add_friend_message"
+
+
+//database parameters
+#define USERS                                @"Users"
+#define FRIENDS                              @"Friends"
+#define VOTES_INFO                           @"VotesInfo"
+#define VOTES_OPTIONS                        @"Options"
+#define FAILED_DELETED_FRIENDS               @"FailedDeletedFriends"
+#define FAILED_DELETED_VOTES                 @"FailedDeletedVotes"
+
+#define USERNAME                             @"username"
+#define PASSWORD                             @"password"
+#define GENDER                               @"gender"
+#define GROUP                                @"group"
+#define MEDIUM_HEAD_IMAGE_PATH               @"mediumHeadImagePath"
+#define MEDIUM_HEAD_IMAGE_URL                @"mediumHeadImageUrl"
+#define ORGINAL_HEAD_IMAGE_PATH              @"originalHeadImagePath"
+#define ORGINAL_HEAD_IMAGE_URL               @"originalHeadImageUrl"
+#define THUMBNAILS_HEAD_IMAGE_PATH           @"thumbnailsHeadImagePath"
+#define THUMBNAILS_HEAD_IMAGE_URL            @"thumbnailsHeadImageUrl"
+#define SCREENNAME                           @"screenname"
+#define SCREENNAME_PINYIN                    @"screennamePinyin"
+#define USER_SIGNATURE                       @"signature"
+#define BASIC_INFO_LAST_UPDATE_TAG           @"basicInfoLastUpdateTag"
+#define HEAD_IMAGE_LAST_UPDATE_TAG           @"headImageLastUpdateTag"
+#define ORGINAL_HEAD_IMAGE_NAME              @"original_head_image"
+#define MEDIUM_HEAD_IMAGE_NAME               @"medium_head_image"
+#define THUMBNAILS_HEAD_IMAGE_NAME           @"thumbnails_head_image"
+#define IMAGE_TYPE                           @"png"
+
+//VotesInfo
+#define VOTE_ID                              @"voteID"
+#define VOTE_TITLE                           @"title"
+#define VOTE_ORGANIZER                       @"organizer"
+#define VOTE_PARTICIPANTS                    @"participants"
+#define VOTE_BASIC_UPDATE_TAG                @"basicUpdateTag"
+#define VOTE_VOTE_UPDATE_TAG                 @"voteUpdateTag"
+#define VOTE_IS_END                          @"isEnd"
+#define VOTE_END_TIME                        @"endTime"
+#define VOTE_ANONYMOUS_FLAG                  @"anonymous"
+#define VOTE_START_TIME                      @"startTime"
+#define VOTE_CATEGORY                        @"category"
+#define VOTE_DRAFT_FLAG                      @"draft"
+#define VOTE_THE_PUBLIC_FLAG                 @"thePublic"
+#define VOTE_NOTIFICATION_FLAG               @"notification"
+#define VOTE_DELETE_FOREVER_FLAG             @"deleteForever"
+
+//options
+#define VOTE_OPTIONS_AVG_PRICE               @"avgPrice"
+#define VOTE_OPTIONS_BUSINESS_ID             @"businessID"
+#define VOTE_OPTIONS_BUSINESS_NAME           @"businessName"
+#define VOTE_OPTIONS_CATEGORY                @"categories"
+#define VOTE_OPTIONS_ORDER                   @"order"
+#define VOTE_OPTIONS_PHOTO_URL               @"photoURL"
+#define VOTE_OPTIONS_RATING_IMG_URL          @"ratingImgURL"
+#define VOTE_OPTIONS_REGIONS                 @"regions"
+#define VOTE_OPTIONS_VOTERS                  @"voters"
+#define VOTE_OPTIONS_PHOTO_PATH              @"photoPath"
+#define VOTE_OPTIONS_RATING_IMG_PATH         @"ratingImgPath"
+#define VOTE_OPTIONS_PHOTO_NAME              @"photo"
+#define VOTE_OPTIONS_RATING_IMG_NAME         @"rating_img"
+//option address info
+#define BUSINESS_ID_OF_CUSTOM_ADDR           -1
+#define BUSINESS_ID_OF_NO_ADDR               -2
+
+//documents directory
+#define DOCUMENTS                            @"documents"
+#define TEMPORARY                            @"tmp"
+#define PERSONAL                             @"Personal"
+#define STRANGERS                            @"Strangers"
+#define VOTES                                @"Votes"
+
+

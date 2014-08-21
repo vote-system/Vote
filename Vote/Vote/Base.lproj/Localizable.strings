@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Vote
+
+  Created by 丁 一 on 14-4-9.
+  Copyright (c) 2014年 Ding Yi. All rights reserved.
+*/
+"ADD_FRIEND_REQUEST" = "%@希望添加你为好友";
+"AGREE_ADD_FRIEND" = "%@同意了你的好友请求";
+"REFUSE_ADD_FRIEND" = "%@拒绝了你的好友请求";
+"VOTE_NOTIFICATION" = "%@发起了一个活动，向你送来拜帖";
